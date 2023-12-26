@@ -17,5 +17,22 @@ nominal_remained_interest = (32/36)*nominal_total_interest
 r_real = pv_calc.periodic_IRR_calc(periodic_payment, n_periods, pv)
 
 r_yearly_bank = 12 * r_real
+to_pay = 207
+
+# cash flow analysis
+cash_flow = 4*[periodic_payment] + [0, to_pay]
+x = pv_calc.pv_calc(payments=cash_flow, discount_rate=r_real)
+
+# test
+
+
+
+
+
+
+
+
+
+
 
 
