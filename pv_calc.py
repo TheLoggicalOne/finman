@@ -9,6 +9,13 @@ def convert_ir(ir, from_period_length, to_period_length):
 #--------------------------------The right way: present value way------------------------------------------------------#
 
 
+def create_payments(first_pay=None,
+                    periodic_pay=None, n_periods=None,
+                    last_pay=None, last_pay_distance=None):
+    pays = ([first_pay]+[periodic_pay for i in range(n_periods)]
+             + [last_pay])
+    return pays
+
 def pv_calc(*, payments=None, discount_rate=0.01, rest=1):
     pv = 0
     for period, payment in enumerate(payments):
